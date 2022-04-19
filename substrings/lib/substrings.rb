@@ -1,15 +1,11 @@
-require 'debug'
-
 class Substrings
   def find_substrings(str, dict)
-    x =
-      dict.reduce(Hash.new) do |acc, word|
-        acc[word] = str.scan(Regexp.new(word, 'i')).length if str.scan(
-          Regexp.new(word, 'i')
-        ).length > 0
-        acc
-      end
-    # debugger
+    dict.reduce(Hash.new) do |acc, word|
+      acc[word] = str.scan(Regexp.new(word, 'i')).length if str.scan(
+        Regexp.new(word, 'i')
+      ).length > 0
+      acc
+    end
   end
 end
 
